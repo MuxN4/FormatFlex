@@ -24,6 +24,7 @@ def json_to_xml(json_file, xml_file):
     try:
         validate_file(json_file, '.json')
         with open(json_file, 'r') as jf:
+            # Read each line (JSON object) from the file
             json_data_list = [json.loads(line) for line in jf.readlines()]
 
         xml_data_list = []
@@ -53,13 +54,19 @@ def xml_to_json(xml_file, json_file):
         validate_file(xml_file, '.xml')
         with open(xml_file, 'r') as xf:
             xml_data = xf.read()
-        
-        json_data = xmltodict.parse(xml_data)
-        json_data = json.loads(json.dumps(json_data["root"]))  # Convert to standard JSON format
+
+        # Split XML data into individual documents
+        xml_documents = xml_data.split('<?xml version="1.0" encoding="utf-8"?>')[1:]
+
+        json_data_list = []
+        for xml_doc in xml_documents:
+            # Parse each XML document
+            xml_dict = xmltodict.parse(xml_doc.strip())
+            json_data_list.append(xml_dict)
 
         with open(json_file, 'w') as jf:
-            json.dump(json_data, jf, indent=4)
-        
+            json.dump(json_data_list, jf, indent=4)
+
         print(f"XML data from {xml_file} has been converted to JSON and saved to {json_file}")
     except Exception as e:
         print(f"Error converting XML to JSON: {e}")
