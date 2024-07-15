@@ -2,7 +2,7 @@ import argparse
 import csv
 import json
 import xmltodict
-import pandas as pd 
+import pandas as pd
 import os
 
 def validate_file(file_path, expected_extension):
@@ -24,13 +24,17 @@ def json_to_xml(json_file, xml_file):
     try:
         validate_file(json_file, '.json')
         with open(json_file, 'r') as jf:
-            json_data = json.load(jf)
-        
-        xml_data = xmltodict.unparse({"root": json_data}, pretty=True)
-        
+            json_data_list = [json.loads(line) for line in jf.readlines()]
+
+        xml_data_list = []
+        for json_data in json_data_list:
+            xml_data = xmltodict.unparse({"root": json_data}, pretty=True)
+            xml_data_list.append(xml_data)
+
         with open(xml_file, 'w') as xf:
-            xf.write(xml_data)
-        
+            for xml_data in xml_data_list:
+                xf.write(xml_data + '\n')
+
         print(f"JSON data from {json_file} has been converted to XML and saved to {xml_file}")
     except Exception as e:
         print(f"Error converting JSON to XML: {e}")
