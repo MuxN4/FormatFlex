@@ -1,4 +1,4 @@
-# FormatFlex
+# FormatFlex 🔄
 
 FormatFlex Utility is a Python script designed to convert data between various formats including CSV, JSON, and XML. This utility provides command-line functionality to perform conversions based on user input.
 
@@ -15,7 +15,7 @@ Before using FormatFlex, ensure you have the following installed:
  - Python 3.x
  - Required Python packages (install using pip install -r requirements.txt)
 
-## Installation and Setup
+## Installation and Setup 🚀
 
 Clone the repository:
 
@@ -35,7 +35,7 @@ Install dependencies:
     ```bash
     pip install -r requirements.txt
     ```
-# Usage
+# Usage ℹ️
 
 ## Command-line Interface
 To use FormatFlex, run the data_converter.py script from the command line with the following options:
