@@ -1,6 +1,6 @@
 # FormatFlex
 
-FormatFlex is a versatile Python utility designed to convert data between CSV, JSON, and XML formats, providing seamless interoperability for various data processing needs.
+FormatFlex Utility is a Python script designed to convert data between various formats including CSV, JSON, and XML. This utility provides command-line functionality to perform conversions based on user input.
 
 ## Features
 
