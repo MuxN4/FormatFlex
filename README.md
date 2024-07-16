@@ -38,6 +38,7 @@ Install dependencies:
 # Usage ℹ️
 
 ## Command-line Interface
+
 To use FormatFlex, run the data_converter.py script from the command line with the following options:
 
     ```bash
@@ -70,6 +71,4 @@ The input.csv file in the project contains sample data that you can use for test
 ## Contributing
 Contributions are welcome! Please fork the repository, make your changes, and submit a pull request. For major changes, please open an issue first to discuss what you would like to change.
 
-## License
-This project is licensed under the MIT License.
 
