@@ -11,9 +11,9 @@
 
 To use FormatFlex, run the data_converter.py script from the command line with the following options:
 
-    ```bash
+    bash
     python data_converter.py <conversion_type> <input_file> <output_file>
-    ```
+    
 Replace `<conversion_type>` with one of the following options:
 
 `csv_to_json`: Convert CSV to JSON
@@ -26,14 +26,14 @@ Replace `<input_file>` and `<output_file>` with the paths to your input and outp
 ## Examples
 ## Convert input.csv from CSV to JSON:
 
-    ```bash
+    bash
     python data_converter.py csv_to_json input.csv output.json
-    ```
+    
 
 ## Convert input.json from JSON to XML:
 
-    ```bash
+    bash
     python data_converter.py json_to_xml input.json output.xml
-    ```
+    
 ## Sample Data
 The input.csv file in the project contains sample data that you can use for testing purposes.
